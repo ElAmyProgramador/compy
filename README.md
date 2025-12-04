@@ -1,2 +1,22 @@
-# Compy
-Hola papu, juguemos league of legends
+# 📦 Compy
+Compy es una librería creada con fines educativos para que su creador "Amy" pueda crear y publicar su primer paquete en python3, además de aprender algo de variable compleja.
+Este paquete nace por el gusto de un programa en Java sobre los complejos que hice.
+Incluye una clase Complejo y funciones básicas como sumar y restar.
+
+---
+
+## Características
+- Representación de los números complejos de la forma a + bi
+- Operaciones básicas
+  - Suma
+  - Resta
+  - Producto
+- Métodos mágicos para usar los operadores de una forma más natural
+
+## ✨ Planes a futuro
+- Añadir la divisón entre complejos
+- Crear un submódulo para los complejos y su forma polar
+- Submódulo de magnitudes y argumentos
+- Submódulo de ecuaciones complejas
+- Opciones para graficar a los números complejos
+- Algo de cálculo complejo (para largo)

@@ -9,7 +9,7 @@ class Complejo:
 
     # funcion para escribir un numero de la forma a + bi convencional
     def __repr__(self):
-        return f"({self.real} + {self.imag}i)"
+        return f"{self.real} + {self.imag}i"
 
     # el conjugaod de un numero complejo
     def Conjugado(self):
