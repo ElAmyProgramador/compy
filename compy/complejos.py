@@ -11,6 +11,10 @@ class Complejo:
     def __repr__(self):
         return f"({self.real} + {self.imag}i)"
 
+    # el conjugaod de un numero complejo
+    def Conjugado(self):
+        return Complejo(self.real, -self.imag)
+    
     # estas funciones son para hacer z + w como is fueran de tipo int, float, etc
     # suma
     def __add__(self, otro):
