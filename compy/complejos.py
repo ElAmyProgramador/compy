@@ -22,9 +22,11 @@ class Complejo:
         elif self.imag == 1:
             return f"{self.real} + i"
         elif self.imag < 0:
-            return f"{self.real} - {self.imag}i"
-        elif self.imag == -1:
-            return f"{self.real} - i"
+            # abusando de los ifs
+            if self.imag == -1:
+                return f"{self.real} - i"
+            else:
+                return f"{self.real} - {self-imag}i"
         else:
             return f"{self.real} + {self.imag}i"
 
