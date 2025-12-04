@@ -11,6 +11,9 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
   - Suma
   - Resta
   - Producto
+    - Complejo * Complejo
+    - Complejo por escalar
+    - conmutatividad con rmul en python
 - Métodos mágicos para usar los operadores de una forma más natural
 
 ## ✨ Planes a futuro
@@ -20,3 +23,4 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
 - Submódulo de ecuaciones complejas
 - Opciones para graficar a los números complejos
 - Algo de cálculo complejo (para largo)
+- Añadir más utilidades

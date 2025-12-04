@@ -1,6 +1,9 @@
 # aqui se definen los commplejos e intentar que sean tomados como un tipo de dato más como int, float, etc
 # Es solo la estuctura / clase
 
+# libreria para algunos metodos sobre los objetos
+from math import atan2
+
 class Complejo:
     # método constructor
     def __init__(self, real, imag=None):
@@ -64,3 +67,13 @@ class Complejo:
     # Igualdad
     def __eq__(self, otro):
         return self.real == otro.real and self.imag == otro.imag
+
+    # obtiene el argumento/angulo de un numero complejo
+    def argumento(self):
+        return atan2(self.imag, self.real)
+
+    # obtiene la forma polar de un complejo
+    def polar(self):
+        r = self.modulo()
+        theta = self.argumento()
+        return (r, theta)
