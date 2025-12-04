@@ -15,12 +15,18 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
     - Complejo por escalar
     - conmutatividad con rmul en python
 - Métodos mágicos para usar los operadores de una forma más natural
+- Librería y metodo para graficar complejos y lista de complejos
 
 ## ✨ Planes a futuro
 - Añadir la divisón entre complejos
 - Crear un submódulo para los complejos y su forma polar
-- Submódulo de magnitudes y argumentos
+- Añadir grafica de vector de un complejo
+- Añadir método calcular raíz enésima de i
 - Submódulo de ecuaciones complejas
-- Opciones para graficar a los números complejos
 - Algo de cálculo complejo (para largo)
 - Añadir más utilidades
+- Añadir más funciones
+  - potencia de complejos
+  - raices n-ésimas (teorema fundametal del álgebra)
+  - normalización de vectores
+  - distancia de complejos

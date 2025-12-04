@@ -3,6 +3,7 @@
 
 # libreria para algunos metodos sobre los objetos
 from math import atan2
+import matplotlib.pyplot as plt
 
 class Complejo:
     # método constructor
@@ -16,7 +17,16 @@ class Complejo:
 
     # funcion para escribir un numero de la forma a + bi convencional
     def __repr__(self):
-        return f"{self.real} + {self.imag}i"
+        if self.imag == 0:
+            return f"{self.real}"
+        elif self.imag == 1:
+            return f"{self.real} + i"
+        elif self.imag < 0:
+            return f"{self.real} - {self.imag}i"
+        elif self.imag == -1:
+            return f"{self.real} - i"
+        else:
+            return f"{self.real} + {self.imag}i"
 
     # el conjugado de un numero complejo
     def conjugado(self):
@@ -69,7 +79,7 @@ class Complejo:
         return self.real == otro.real and self.imag == otro.imag
 
     # obtiene el argumento/angulo de un numero complejo
-    def argumento(self):
+    def arg(self):
         return atan2(self.imag, self.real)
 
     # obtiene la forma polar de un complejo
@@ -77,3 +87,15 @@ class Complejo:
         r = self.modulo()
         theta = self.argumento()
         return (r, theta)
+
+    # un método para raficar un solo objeto
+    def graficar(self):
+        plt.axhline(0, color = "black", lw = 0.5)
+        plt.axvline(0, color = "black", lw = 0.5)
+        plt.xlabel("Re")
+        plt.ylabel("Im")
+        plt.axis("equal")
+        plt.grid(True)
+        plt.scatter(self.real, self.imag, s = 120)
+        plt.text(self.real, self.imag, f"{self}")
+        plt.show()
