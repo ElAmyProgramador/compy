@@ -7,5 +7,7 @@ __all__ = [
     "sumar",
     "resta",
     "producto",
-    "graficar"
+    "graficar",
+    "graficar_array",
+    "graficar_vctor"
 ]
