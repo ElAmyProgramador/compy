@@ -14,6 +14,7 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
     - Complejo * Complejo
     - Complejo por escalar
     - conmutatividad con rmul en python
+    - Complejo por su conjugado
 - Métodos mágicos para usar los operadores de una forma más natural
 - Librería y metodo para graficar complejos y lista de complejos
 
