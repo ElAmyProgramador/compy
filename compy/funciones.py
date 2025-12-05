@@ -24,7 +24,15 @@ def producto(z : Complejo, w : Complejo) -> Complejo:
     return Complejo(r, i)
 
 # division
-# sepa la bola xD
+def division(n : Complejo, d : Complejo):
+    if d == Complejo.CERO:
+        raise TypeError("No se puede dividir sobre cero")
+    else:
+        num = n * d.conjugado()
+        den = d * d.conjugado()
+        a = num.real / den
+        b = num.imag / den
+        return Complejo(a, b)
 
 def exp(z : Complejo) -> Complejo:
     r = math.exp(z.real) * math.cos(z.imag)

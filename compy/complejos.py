@@ -26,7 +26,7 @@ class Complejo:
             if self.imag == -1:
                 return f"{self.real} - i"
             else:
-                return f"{self.real} - {self-imag}i"
+                return f"{self.real} {self.imag}i"
         else:
             return f"{self.real} + {self.imag}i"
 
@@ -58,9 +58,13 @@ class Complejo:
     def __mul__(self, otro):
         if isinstance(otro, Complejo):
             # multiplicacion normal en los complejos
-            r = self.real * otro.real - self.imag * otro.imag
-            i = self.real * otro.imag + self.imag * otro.real
-            return Complejo(r, i)
+            # caso especial en el que se mútiplica un complejo por su conjugado
+            if otro == self.conjugado():
+                return self.real ** 2 + self.imag ** 2
+            else:
+                r = self.real * otro.real - self.imag * otro.imag
+                i = self.real * otro.imag + self.imag * otro.real
+                return Complejo(r, i)
         elif isinstance(otro, (int, float)):
             # basicamente multipliacion por un escalar
             r = self.real * otro
@@ -113,6 +117,7 @@ class Complejo:
         plt.show()
 
 # constantes del campo
-Complejo.CERO = Complejo(0, 0)
-Complejo.UNO = Complejo(1, 0)
+Complejo.CERO = Complejo(0)
+Complejo.UNO = Complejo(1)
 Complejo.I = Complejo(0, 1)
+Complejo.I2 = Complejo(-1)

@@ -18,7 +18,6 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
 - Librería y metodo para graficar complejos y lista de complejos
 
 ## ✨ Planes a futuro
-- Añadir la divisón entre complejos
 - Crear un submódulo para los complejos y su forma polar
 - Añadir método calcular potencia enésima de i
 - Submódulo de ecuaciones complejas
