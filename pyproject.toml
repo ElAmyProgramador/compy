@@ -1,7 +1,37 @@
 [project]
 name = "compy"
 version = "0.1.0"
+description = "Una librería creada con fines educativos para poder trabajar de una manera más simple con los números complejos."
+authors = [
+  {name = "Emilio Alexeiv Rosales Guillen"},
+  {name = "Amy"},
+  {name = "Psykokwak"}
+]
+license = {file = "Licence"}
+readme = "README.md"
+requires-python = ">= 3.11"
+dependencies = [
+  "matplotlib"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Education",
+    "Topic :: Scientific/Engineering :: Mathematics"
+]
+
+[tool.setuptools.packages.find]
+include = ["compy"]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".", "compy"
+]
+addopts = "-q"
 
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
