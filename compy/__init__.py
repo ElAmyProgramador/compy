@@ -4,6 +4,7 @@ from .grafica import graficar
 
 __all__ = [
     "Complejo",
+    "CERO", "UNO", "I",
     "sumar",
     "resta",
     "producto",

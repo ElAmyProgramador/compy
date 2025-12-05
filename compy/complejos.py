@@ -101,3 +101,18 @@ class Complejo:
         plt.scatter(self.real, self.imag, s = 120)
         plt.text(self.real, self.imag, f"{self}")
         plt.show()
+
+    def graficar_vector(self):
+        plt.axhline(0, color = "black", lw = 0.5)
+        plt.axvline(0, color = "black", lw = 0.5)
+        plt.quiver(0, 0, self.real, self.imag, angles = "xy", scale_units = "xy", scale = 1, color = "blue")
+        plt.xlim(min(0, self.real) - 1, max(0, self.real) + 1)
+        plt.ylim(min(0, self.imag) - 1, max(0, self.imag) + 1)
+        plt.gca().set_aspect("equal", adjustable = "box")
+        plt.grid(True)
+        plt.show()
+
+# constantes del campo
+Complejo.CERO = Complejo(0, 0)
+Complejo.UNO = Complejo(1, 0)
+Complejo.I = Complejo(0, 1)
