@@ -1,6 +1,7 @@
 from .complejos import Complejo
 from .funciones import sumar, producto, resta
 from .grafica import graficar
+from .utils import complejo_random, i_elevado
 
 __all__ = [
     "Complejo",
@@ -10,5 +11,7 @@ __all__ = [
     "producto",
     "graficar",
     "graficar_array",
-    "graficar_vctor"
+    "graficar_vector",
+    "complejo_random",
+    "i_elevado"
 ]

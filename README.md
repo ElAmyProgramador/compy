@@ -19,7 +19,6 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
 
 ## ✨ Planes a futuro
 - Crear un submódulo para los complejos y su forma polar
-- Añadir método calcular potencia enésima de i
 - Submódulo de ecuaciones complejas
 - Algo de cálculo complejo (para largo)
 - Añadir más utilidades
