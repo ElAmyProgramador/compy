@@ -60,3 +60,18 @@ def test_producto_complejos_escalar():
     assert res1.imag == 70
     assert res2.real == 60
     assert res2.imag == 70
+
+def test_producto_complejos_conmutatividad():
+    z = Complejo(8, 9)
+    w = Complejo(3, -4)
+    u = Complejo(2, 2)
+    assert z * w == w * z
+    assert z * u == u * z
+    assert w * u == u * w
+
+def test_producto_transitividad():
+    z = Complejo(4, 5)
+    w = Complejo(7, -1)
+    u = w
+    assert z * w == z * u
+    assert w == u
