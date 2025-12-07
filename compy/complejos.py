@@ -1,10 +1,6 @@
 # aqui se definen los commplejos e intentar que sean tomados como un tipo de dato más como int, float, etc
 # Es solo la estuctura / clase
 
-# libreria para algunos metodos sobre los objetos
-from math import atan2
-#import matplotlib.pyplot as plt
-
 class Complejo:
     # método constructor
     def __init__(self, real, imag=None):
@@ -86,6 +82,7 @@ class Complejo:
 
     # obtiene el argumento/angulo de un numero complejo
     def arg(self):
+        from math import atan2
         return atan2(self.imag, self.real)
 
     # obtiene la forma polar de un complejo
@@ -95,26 +92,28 @@ class Complejo:
         return (r, theta)
 
     # un método para raficar un solo objeto
-    #def graficar(self):
-        #plt.axhline(0, color = "black", lw = 0.5)
-        #plt.axvline(0, color = "black", lw = 0.5)
-        #plt.xlabel("Re")
-        #plt.ylabel("Im")
-        #plt.axis("equal")
-        #plt.grid(True)
-        #plt.scatter(self.real, self.imag, s = 120)
-        #plt.text(self.real, self.imag, f"{self}")
-        #plt.show()
+    def graficar(self):
+        import matplotlib.pyplot as plt
+        plt.axhline(0, color = "black", lw = 0.5)
+        plt.axvline(0, color = "black", lw = 0.5)
+        plt.xlabel("Re")
+        plt.ylabel("Im")
+        plt.axis("equal")
+        plt.grid(True)
+        plt.scatter(self.real, self.imag, s = 120)
+        plt.text(self.real, self.imag, f"{self}")
+        plt.show()
 
-    #def graficar_vector(self):
-        #plt.axhline(0, color = "black", lw = 0.5)
-        #plt.axvline(0, color = "black", lw = 0.5)
-        #plt.quiver(0, 0, self.real, self.imag, angles = "xy", scale_units = "xy", scale = 1, color = "blue")
-        #plt.xlim(min(0, self.real) - 1, max(0, self.real) + 1)
-        #plt.ylim(min(0, self.imag) - 1, max(0, self.imag) + 1)
-        #plt.gca().set_aspect("equal", adjustable = "box")
-        #plt.grid(True)
-        #plt.show()
+    def graficar_vector(self):
+        import matplotlib.pyplot as plt
+        plt.axhline(0, color = "black", lw = 0.5)
+        plt.axvline(0, color = "black", lw = 0.5)
+        plt.quiver(0, 0, self.real, self.imag, angles = "xy", scale_units = "xy", scale = 1, color = "blue")
+        plt.xlim(min(0, self.real) - 1, max(0, self.real) + 1)
+        plt.ylim(min(0, self.imag) - 1, max(0, self.imag) + 1)
+        plt.gca().set_aspect("equal", adjustable = "box")
+        plt.grid(True)
+        plt.show()
 
 # constantes del campo
 Complejo.CERO = Complejo(0)
