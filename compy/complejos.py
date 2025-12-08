@@ -1,9 +1,11 @@
 # aqui se definen los commplejos e intentar que sean tomados como un tipo de dato más como int, float, etc
 # Es solo la estuctura / clase
 
+from __future__ import annotations # para usar la clase dentro de la definición de la clase
+
 class Complejo:
     # método constructor
-    def __init__(self, real, imag=None):
+    def __init__(self, real, imag=None) -> None:
         if imag is None:
             self.real = real
             self.imag = 0
@@ -12,7 +14,7 @@ class Complejo:
             self.imag = imag
 
     # funcion para escribir un numero de la forma a + bi convencional
-    def __repr__(self):
+    def __repr__(self) -> str:
         if self.imag == 0:
             return f"{self.real}"
         elif self.imag == 1:
@@ -26,13 +28,9 @@ class Complejo:
         else:
             return f"{self.real} + {self.imag}i"
 
-    # el conjugado de un numero complejo
-    def conjugado(self):
-        return Complejo(self.real, -self.imag)
-    
     # estas funciones son para hacer z x w como si fueran de tipo int, float, etc
     # suma
-    def __add__(self, otro):
+    def __add__(self, otro : Complejo | float | int) -> Complejo:
         # Como a + 0i es un complejo y un real, si a un numero a + bi le sumamos c + 0i tenemos a + c + bi 
         if isinstance(otro, Complejo):
             return Complejo(self.real + otro.real, self.imag + otro.imag)
@@ -42,7 +40,7 @@ class Complejo:
             raise TypeError("No se puede sumar con este tipo de dato")
 
     # resta
-    def __sub__(self, otro):
+    def __sub__(self, otro : Complejo | float | int) -> Complejo:
         if isinstance(otro, Complejo):
             return Complejo(self.real - otro.real, self.imag - otro.imag)
         elif isinstance(otro, (int, float)):
@@ -51,7 +49,7 @@ class Complejo:
             raise TypeError("No se puede restar con este tipo de dato")
         
     # Multiplicación
-    def __mul__(self, otro):
+    def __mul__(self, otro : Complejo | float | int) -> Complejo:
         if isinstance(otro, Complejo):
             # multiplicacion normal en los complejos
             # caso especial en el que se mútiplica un complejo por su conjugado
@@ -69,30 +67,40 @@ class Complejo:
         else:
             raise TypeError("No se puede operar con este tipo de dato")
 
-    def __rmul__(self, otro):
+    def __rmul__(self, otro : Complejo | float | int) -> Complejo:
         return self.__mul__(otro)
 
-    # Módulo o magnitud
-    def modulo(self):
-        return (self.real**2 + self.imag**2) ** 0.5
-
     # Igualdad
-    def __eq__(self, otro):
+    def __eq__(self, otro : Complejo | float | int) -> bool:
         return self.real == otro.real and self.imag == otro.imag
 
+    # el conjugado de un numero complejo
+    def conjugado(self) -> Complejo:
+        #return Complejo(self.real, -self.imag)
+        if self.imag == 0:
+            return self.real
+        else:
+            return Complejo(self.real, -self.imag)
+
+
+    # Módulo o magnitud
+    def modulo(self) -> float:
+        return (self.real**2 + self.imag**2) ** 0.5
+
+
     # obtiene el argumento/angulo de un numero complejo
-    def arg(self):
+    def arg(self) -> float:
         from math import atan2
         return atan2(self.imag, self.real)
 
     # obtiene la forma polar de un complejo
-    def polar(self):
+    def polar(self) -> (float, float):
         r = self.modulo()
         theta = self.argumento()
         return (r, theta)
 
-    # un método para raficar un solo objeto
-    def graficar(self):
+    # un método para graficar un solo objeto
+    def graficar(self) -> None:
         import matplotlib.pyplot as plt
         plt.axhline(0, color = "black", lw = 0.5)
         plt.axvline(0, color = "black", lw = 0.5)
@@ -104,7 +112,7 @@ class Complejo:
         plt.text(self.real, self.imag, f"{self}")
         plt.show()
 
-    def graficar_vector(self):
+    def graficar_vector(self) -> None:
         import matplotlib.pyplot as plt
         plt.axhline(0, color = "black", lw = 0.5)
         plt.axvline(0, color = "black", lw = 0.5)

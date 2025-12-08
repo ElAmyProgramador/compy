@@ -24,7 +24,7 @@ def producto(z : Complejo, w : Complejo) -> Complejo:
     return Complejo(r, i)
 
 # division
-def division(n : Complejo, d : Complejo):
+def division(n : Complejo, d : Complejo) -> Complejo: # desconozco si la división de complejos pueod dar un entero o un real
     if d == Complejo.CERO:
         raise TypeError("No se puede dividir sobre cero")
     else:

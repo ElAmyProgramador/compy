@@ -2,7 +2,7 @@ from .complejos import Complejo
 import matplotlib.pyplot as plt
 
 # Funciones sobre graficar
-def graficar(z : Complejo):
+def graficar(z : Complejo) -> None:
     plt.axhline(0, color = "black", lw = 0.5)
     plt.axvline(0, color = "black", lw = 0.5)
     plt.xlabel("Re")
@@ -13,7 +13,7 @@ def graficar(z : Complejo):
     plt.text(z.real, z.imag, f"{z}")
     plt.show()
 
-def graficar_array(array):
+def graficar_array(array) -> None:
     xs = [z.real for z in array]
     ys = [z.imag for z in array]
     plt.axhline(0, color = "black", lw = 0.5)
@@ -27,7 +27,7 @@ def graficar_array(array):
         plt.text(z.real, z.imag, f"{z}")
     plt.show()
 
-def graficar_vector(z : Complejo):
+def graficar_vector(z : Complejo) -> None:
     plt.figure()
     plt.axhline(0, color='black', linewidth=0.5)
     plt.axvline(0, color='black', linewidth=0.5)
@@ -39,7 +39,6 @@ def graficar_vector(z : Complejo):
         scale = 1,
         color = 'purple'
     )
-    margen = 1
     plt.xlim(min(0, z.real) - 1, max(0, z.real) + 1)
     plt.ylim(min(0, z.imag) - 1, max(0, z.imag) + 1)
     plt.gca().set_aspect('equal', adjustable='box')
