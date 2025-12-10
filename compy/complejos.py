@@ -83,10 +83,19 @@ class Complejo:
             return Complejo(self.real, -self.imag)
 
 
-    # Módulo o magnitud
+    # Módulo, magnitud o norma
     def modulo(self) -> float:
         return (self.real**2 + self.imag**2) ** 0.5
 
+    # norma de un vector complejo
+    def normalizar(self) -> Complejo:
+        mod = self.modulo()
+        if mod != 0:
+            re = self.real / mod
+            im = self.imag / mod
+            return Complejo(re, im)
+        else:
+            Complejo.Cero
 
     # obtiene el argumento/angulo de un numero complejo
     def arg(self) -> float:

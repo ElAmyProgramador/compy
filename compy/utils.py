@@ -33,21 +33,16 @@ def complejo_random(a = 1, b = 1) -> Complejo:
 # este ejercicio viene deu n examen, la pregunta:
 # Demuestra que para todo n en los naturales i elevado a la n solo puede tener como valor a i, -i, 1, -1
 def i_elevado(n : int) -> Complejo | int:
-    if n >= 0:
-        if n == 0:
+    n %= 4
+    match n:
+        case 0:
             return 1
-        elif n == 1:
+        case 1:
             return Complejo.I
-        elif n == 2:
+        case 2:
             return -1
-        elif n == 3:
-            return i_elevado(2) * Complejo.I
-        elif n == 4:
-            return 1
-        else:
-            return Complejo.I * i_elevado(n - 1)
-    else:
-        return NotImplemented
+        case 3:
+            return -Complejo.I
 
 # utilidades de complejos y tuplas (debido a esto, es probable que est alibreria solo trabaje en python <= 3.9)
 # cap : Complejo a tupla
@@ -56,7 +51,10 @@ def cap(z : Complejo) -> tuple[float | int, float | int]:
 
 # tac : tupla a complejo
 def tac(p : tuple[int | float, int | float]) -> Complejo:
-    return Complejo(p[0], p[1])
+    if p[1] == None:
+        return Complejo(p[0])
+    else:
+        return Complejo(p[0], p[1])
 
 # normalizar
 def normalizar(z : Complejo) -> float | int:
