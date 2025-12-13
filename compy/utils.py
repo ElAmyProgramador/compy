@@ -50,11 +50,11 @@ def cap(z : Complejo) -> tuple[float | int, float | int]:
     return (z.real, z.imag)
 
 # tac : tupla a complejo
-def tac(p : tuple[int | float, int | float]) -> Complejo:
-    if p[1] == None:
-        return Complejo(p[0])
-    else:
+def tac(p : tuple[int | float, int | float] | float | int) -> Complejo:
+    if isinstance(p, tuple):
         return Complejo(p[0], p[1])
+    else:
+        return Complejo(p)
 
 # normalizar
 def normalizar(z : Complejo) -> float | int:
@@ -66,12 +66,12 @@ def normalizar(z : Complejo) -> float | int:
     else:
         return Complejo.Cero
 
-# conversiones de angulos a radianes
-def grados(rad : float) -> float:
+# conversiones de radianes a grados y viceversa
+def rad_a_grad(rad : float) -> float:
     from math import pi
     return rad * 180 / pi
 
-def radianes(grad : float) -> float:
+def grad_a_rad(grad : float) -> float:
     from math import pi
     return grad * pi / 180
 

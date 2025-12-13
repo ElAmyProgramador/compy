@@ -23,7 +23,7 @@ def test_cap():
     u = Complejo(2)
     assert cu.cap(z) == (3, 2)
     assert cu.cap(w) == (-4, -5)
-    assert cu.cap(u) == (2)
+    assert cu.cap(u) == (2, 0)
 
 def test_tac():
     a = (4, 3)
@@ -41,4 +41,9 @@ def test_es_complejo():
     assert cu.es_complejo(a) == False
     assert cu.es_complejo(b) == True
 
-# hacer tests de conversión de ángulos
+def test_rad_a_grad():
+    z = Complejo(3, 3)
+    z_arg = z.arg()
+    z_grado = cu.rad_a_grad(z_arg)
+    assert z_grado == 45
+    assert cu.grad_a_rad(z_grado) == z_arg

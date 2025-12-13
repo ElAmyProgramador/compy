@@ -1,7 +1,7 @@
 from .complejos import Complejo
 from .funciones import sumar, producto, resta
 from .grafica import graficar
-from .utils import complejo_random, i_elevado, cap, tac, normalizar, grados, radianes, es_complejo
+from .utils import complejo_random, i_elevado, cap, tac, normalizar, grad_a_rad, rad_a_grad, es_complejo
 
 __all__ = [
     "Complejo",
@@ -15,7 +15,7 @@ __all__ = [
     "complejo_random",
     "i_elevado",
     "normalizar",
-    "grados",
-    "radianes",
+    "grad_a_rad",
+    "rad_a_grad",
     "es_complejo"
 ]

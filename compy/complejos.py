@@ -74,6 +74,10 @@ class Complejo:
     def __eq__(self, otro : Complejo | float | int) -> bool:
         return self.real == otro.real and self.imag == otro.imag
 
+    # Negativo
+    def __neg__(self) -> Complejo:
+        return Complejo(-self.real, -self.imag)
+
     # el conjugado de un numero complejo
     def conjugado(self) -> Complejo:
         #return Complejo(self.real, -self.imag)
@@ -83,11 +87,11 @@ class Complejo:
             return Complejo(self.real, -self.imag)
 
 
-    # Módulo, magnitud o norma
+    # Módulo, magnitud
     def modulo(self) -> float:
         return (self.real**2 + self.imag**2) ** 0.5
 
-    # norma de un vector complejo
+    # un vector complejo con la misma dirección que su vector padre
     def normalizar(self) -> Complejo:
         mod = self.modulo()
         if mod != 0:
