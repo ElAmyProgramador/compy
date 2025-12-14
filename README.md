@@ -8,7 +8,7 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
 ## ✨ Características
 - Clase *Complejo* con:
   - Representación de los números complejos de la forma a + bi
-  - Operaciones básicas
+  - Operaciones básicas con métodos mágicos para usar los operadores de una forma mucho más natural
     - Suma
     - Resta
     - Producto
@@ -16,14 +16,16 @@ Incluye una clase Complejo y funciones básicas como sumar y restar.
       - Complejo por escalar
       - conmutatividad con rmul en python
       - Complejo por su conjugado
-  - Métodos mágicos para usar los operadores de una forma más natural
+    - División (*__truediv__*)
+      - División por escalar
+      - División por complejo
 - Librería y método para graficar complejos y lista de complejos
 - Librería de funciones para operar sobre los objetos
 - Más herramientas en utils.py
 - Se procura un diseño modular que sea fácil de entender
 
 ## Dependencias
-De momento, solo es posible hacer graficación de los números complejos con matplotlib, por lo que solo será necesario eso
+De momento, solo es posible hacer graficación de los números complejos con matplotlib, por lo que solo será necesaria esta librería
 - [Matplotlib](https://matplotlib.org/)
 
 ## ✨ Planes a futuro
@@ -32,9 +34,8 @@ De momento, solo es posible hacer graficación de los números complejos con mat
 - Algo de cálculo complejo (para largo)
 - Añadir más utilidades
 - Añadir más funciones
-  - potencia de complejos
+  - potencia de complejos (números flotantes)
   - raices n-ésimas (teorema fundametal del álgebra)
-  - normalización de vectores
   - distancia de complejos
 
 ## 📜 Licencia
