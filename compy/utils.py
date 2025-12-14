@@ -44,7 +44,7 @@ def i_elevado(n : int) -> Complejo | int:
         case 3:
             return -Complejo.I
 
-# utilidades de complejos y tuplas (debido a esto, es probable que est alibreria solo trabaje en python <= 3.9)
+# utilidades de complejos y tuplas (debido a esto, es probable que esta alibreria solo trabaje en python <= 3.9)
 # cap : Complejo a tupla
 def cap(z : Complejo) -> tuple[float | int, float | int]:
     return (z.real, z.imag)

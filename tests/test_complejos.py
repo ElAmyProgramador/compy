@@ -69,9 +69,68 @@ def test_producto_complejos_conmutatividad():
     assert z * u == u * z
     assert w * u == u * w
 
+def test_negacion():
+    z = Complejo(3, 4)
+    m_z = -z
+    assert m_z.real == -3
+    assert m_z.imag == -4
+
+def test_negacion_i():
+    z = -Complejo.I
+    assert z.real == 0
+    assert z.imag == -1
+
+
 def test_producto_transitividad():
     z = Complejo(4, 5)
     w = Complejo(7, -1)
     u = w
     assert z * w == z * u
     assert w == u
+
+def test_division_complejos():
+    z = Complejo(1, 1)
+    w = Complejo(1, -1)
+    r = z / w
+    assert r.real == 0
+    assert r.imag == 1
+
+
+def test_division_escalar():
+    z = Complejo(2, 4)
+    r = z / 2
+    assert r.real == 1
+    assert r.imag == 2
+
+
+def test_division_inversa():
+    z = Complejo(1, 1)
+    r = 1 / z
+    assert r.real == 0.5
+    assert r.imag == -0.5
+
+def test_pow_cero():
+    z = Complejo(3, 4)
+    w = z ** 0
+    assert w.real == 1
+    assert w.imag == 0
+
+
+def test_pow_positivo():
+    z = Complejo(1, 1)
+    w = z ** 2
+    assert w.real == 0
+    assert w.imag == 2
+
+
+def test_pow_negativo():
+    z = Complejo(1, 1)
+    w = z ** -1
+    assert w.real == 0.5
+    assert w.imag == -0.5
+
+
+def test_pow_i():
+    assert (Complejo.I ** 2).real == -1
+    assert (Complejo.I ** 2).imag == 0
+

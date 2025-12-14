@@ -70,6 +70,32 @@ class Complejo:
     def __rmul__(self, otro : Complejo | float | int) -> Complejo:
         return self.__mul__(otro)
 
+    # división
+    def __truediv__(self, otro) -> Complejo:
+        if isinstance(otro, (float, int)):
+            if otro == Complejo.CERO:
+                raise ZeroDivisionError("División sobre 0")
+            else:
+                return Complejo(self.real / otro, self.imag / otro)
+        elif isinstance(otro, Complejo):
+            if otro == 0:
+                raise ZeroDivisionError("División sobre 0")
+            else:
+                d = otro.real ** 2 + otro.imag ** 2
+                r = (self.real * otro.real + self.imag * otro.imag) / d
+                i = (self.imag * otro.real - self.real * otro.imag) / d
+                return Complejo(r, i)
+        else:
+            raise TypeError("No se puede operar con este tipo de dato")
+
+    def __rtruediv__(self, otro) -> Complejo:
+        if isinstance(otro, (int, float)):
+            if otro == 0:
+                raise ZeroDivisionError("División por 0")
+            else:
+                d = self.real**2 + self.imag**2
+                return Complejo(otro * self.real / d, -otro * self.imag / d)
+
     # Igualdad
     def __eq__(self, otro : Complejo | float | int) -> bool:
         return self.real == otro.real and self.imag == otro.imag
@@ -77,6 +103,25 @@ class Complejo:
     # Negativo
     def __neg__(self) -> Complejo:
         return Complejo(-self.real, -self.imag)
+
+    # pos
+    def __pos__(self) -> Complejo:
+        return self
+
+    # potencia
+    def __pow__(self, n : int) -> Complejo:
+        if not isinstance(n, int):
+            raise TypeError("El exponente debe ser un número entero")
+
+        if n == 0:
+            return Complejo.UNO
+        elif n < 0:
+            return Complejo.UNO / (self ** (-n))
+        else:
+            res = Complejo.UNO
+            for _ in range(n):
+                res *= self
+            return res
 
     # el conjugado de un numero complejo
     def conjugado(self) -> Complejo:
